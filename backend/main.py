@@ -63,7 +63,8 @@ class Lanchonete():
                     "erro": "Total inválido"
                 }), 400
 
-            chave = f"pedido{self.contador += 1}"
+            self.contador += 1
+            chave = f"pedido{self.contador}"
             self.pedidos[chave] = {
                 "cliente": {
                     "nome": cliente,

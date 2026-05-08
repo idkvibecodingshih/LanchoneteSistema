@@ -1,8 +1,7 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import colorama
 import flask_cors
 import datetime
-import jsonify
 
 colorama.init()
 
@@ -25,14 +24,17 @@ class Lanchonete():
 
     def registrarrotas(self):
 
-        @self.server.route("/api/v1/pedido")
-        def registrarpedido(self, data):
+        @self.server.route("/api/v1/pedido", methods=["POST"])
+        def registrarpedido(self):
+            data = request.json
+            
             cliente = str(data["cliente"]["nome"])
             telefone = str(data["cliente"]["telefone"])
             endereco = str(data["cliente"]["endereco"])
 
             itens = list(data["itens"])
             preços = list(map(lambda x: x == self.produtos[0], itens))
+            total = 0
             for item in itens:
                 nome = item["nome"]
                 total += self.produtos[nome]
@@ -61,7 +63,7 @@ class Lanchonete():
                     "erro": "Total inválido"
                 }), 400
 
-            chave = f"pedido{self.contador}"
+            chave = f"pedido{self.contador += 1}"
             self.pedidos[chave] = {
                 "cliente": {
                     "nome": cliente,

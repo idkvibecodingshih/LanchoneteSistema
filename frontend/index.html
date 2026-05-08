@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burger House</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Burger House</div>
+
+    <nav>
+      <button onclick="scrollToSection('inicio')">Início</button>
+      <button onclick="scrollToSection('cardapio')">Cardápio</button>
+      <button onclick="scrollToSection('pedidos')">Pedidos</button>
+      <button class="cart-btn" onclick="openCart()">
+        Carrinho <span id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div>
+      <h1>O melhor lanche da cidade na sua <span>porta.</span></h1>
+
+      <p>
+        Monte seu pedido, adicione ao carrinho e finalize em poucos segundos.
+        Site personalizado para lanchonetes, hamburguerias, pizzarias e pequenos negócios.
+      </p>
+
+      <button class="primary-btn" onclick="scrollToSection('cardapio')">
+        Ver Cardápio
+      </button>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-food"></div>
+    </div>
+  </main>
+
+  <section id="cardapio">
+    <div class="section-title">
+      <div>
+        <h2>Cardápio</h2>
+        <p>Escolha seus lanches favoritos e adicione ao carrinho.</p>
+      </div>
+
+      <div class="filters">
+        <button class="active" onclick="filterCategory('todos', this)">Todos</button>
+        <button onclick="filterCategory('hamburguer', this)">Hambúrgueres</button>
+        <button onclick="filterCategory('bebida', this)">Bebidas</button>
+        <button onclick="filterCategory('combo', this)">Combos</button>
+      </div>
+    </div>
+
+    <div id="foodGrid" class="grid"></div>
+  </section>
+
+  <section id="pedidos">
+    <div class="section-title">
+      <div>
+        <h2>Pedidos recentes</h2>
+        <p>Área demonstrativa puxando dados de /api/v1/pedidos.</p>
+      </div>
+
+      <button class="primary-btn" onclick="loadPedidos()">Atualizar pedidos</button>
+    </div>
+
+    <div id="ordersGrid" class="grid"></div>
+  </section>
+
+  <div id="cartOverlay" class="cart-overlay">
+    <aside class="cart">
+      <div class="cart-header">
+        <h2>Seu carrinho</h2>
+        <button class="close-cart" onclick="closeCart()">Fechar</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+        Total: R$ <span id="cartTotal">0,00</span>
+      </div>
+
+      <div class="form">
+        <input id="customerName" placeholder="Seu nome" />
+        <input id="customerPhone" placeholder="WhatsApp" />
+        <input id="customerAddress" placeholder="Endereço de entrega" />
+        <textarea id="customerNote" placeholder="Observações do pedido"></textarea>
+
+        <button class="order-btn" onclick="sendOrder()">
+          Finalizar Pedido
+        </button>
+
+        <div id="orderStatus" class="status"></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    Burger House © 2026 — Site comercial para pequenos empreendimentos.
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

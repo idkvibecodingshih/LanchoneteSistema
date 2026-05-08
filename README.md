@@ -5,7 +5,7 @@ Sistema completo de lanchonete com frontend responsivo e backend REST API desenv
 
 O projeto simula uma plataforma real de pedidos online para pequenos empreendimentos, permitindo listagem dinâmica de produtos, gerenciamento de carrinho e envio de pedidos diretamente para a API.
 
-##✨ Funcionalidades
+#✨ Funcionalidades
 Cardápio dinâmico integrado à API
 Sistema de carrinho funcional
 Registro de pedidos
@@ -16,7 +16,7 @@ Integração frontend ↔ backend via fetch
 Processamento e armazenamento de pedidos
 Arquitetura baseada em classes
 Suporte a CORS para integração externa
-##🚀 Tecnologias Utilizadas
+#🚀 Tecnologias Utilizadas
 Backend
 Python
 Flask
@@ -26,12 +26,12 @@ Frontend
 HTML5
 CSS3
 JavaScript Vanilla
-##📡 Endpoints da API
+#📡 Endpoints da API
 Método	Endpoint	Descrição
 GET	/api/v1/lanches	Lista os produtos
 GET	/api/v1/pedidos	Lista os pedidos
 POST	/api/v1/pedido	Registra um novo pedido
-##🧠 Objetivo do Projeto
+#🧠 Objetivo do Projeto
 
 O objetivo do projeto é demonstrar a construção completa de uma aplicação web integrada, conectando frontend e backend através de uma REST API moderna.
 
@@ -49,7 +49,7 @@ Sistema de pedidos online
 Carrinho lateral interativo
 Visual moderno com design responsivo
 Estrutura adaptável para outros nichos comerciais
-##🔮 Melhorias Futuras
+#🔮 Melhorias Futuras
 Integração com banco de dados
 Painel administrativo
 Autenticação JWT
